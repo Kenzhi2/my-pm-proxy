@@ -7,8 +7,7 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'Condition ID is required' });
   }
 
-  const POLYMARKET_API_URL = `https://strapi-matic.polymarket.com/markets?condition_id=${id}`;
-
+  const POLYMARKET_API_URL = `https://data-api.polymarket.com/markets?condition_id=${id}`;
   try {
     const apiResponse = await fetch(POLYMARKET_API_URL);
     if (!apiResponse.ok) {
